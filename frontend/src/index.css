@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-kijani-500; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-kijani-700 text-white hover:bg-kijani-800; }
+  .btn-accent { @apply btn bg-jua-500 text-ink hover:bg-jua-400; }
+  .btn-ghost { @apply btn border border-kijani-200 bg-white text-kijani-800 hover:bg-kijani-50; }
+  .btn-danger { @apply btn border border-red-200 bg-white text-red-700 hover:bg-red-50; }
+  .input { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm placeholder:text-slate-400 focus:border-kijani-500; }
+  .label { @apply mb-1 block text-sm font-medium text-slate-700; }
+  .panel { @apply rounded-lg border border-slate-200 bg-white; }
+  .chip { @apply inline-block rounded-full bg-kijani-100 px-2.5 py-0.5 text-xs font-semibold text-kijani-800; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
